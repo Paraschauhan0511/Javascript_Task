@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+input, button {
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#result-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.result-div {
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
