@@ -3,24 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number Splitter</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Split Number</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <h1>Number Splitter</h1>
-    <label for="number">Enter a Number:</label>
-    <input type="number" id="number" placeholder="Number" required>
-    
-    <label for="splits">Enter Number of Splits:</label>
-    <input type="number" id="splits" placeholder="Number of Splits" required>
-    
-    <button onclick="splitNumber()">Split</button>
-    
-    <div id="result-container"></div>
-
-   
+    <div>
+        <input id="number" type="text" placeholder="Enter a number">
+        <br>
+        <input id="splits" type="text" placeholder="Enter number of splits">
+        <br>
+        <button id="bttn" onclick="splitNumber()">Split</button>
+        <div id="result-container"></div>
+    </div>
     <script src="main.js"></script>
-
 </body>
 </html>

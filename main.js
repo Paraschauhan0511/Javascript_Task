@@ -1,47 +1,46 @@
 function splitNumber() {
-    // Get the input values
-    const numberInput = document.getElementById('number').value;
-    const splitsInput = document.getElementById('splits').value;
-    
-    const number = parseFloat(numberInput); // Convert input to a float number
-    const splits = parseInt(splitsInput);   // Convert input to an integer
-    
-    // Get the result container element
+    // Get the values from the input fields
+    const numberInput = document.getElementById('number').value; // The number to split
+    const splitsInput = document.getElementById('splits').value; // The number of parts
+
+    // Convert the input values to a number
+    const number = parseFloat(numberInput); // Convert to a floating-point number
+    const splits = parseInt(splitsInput);   // Convert to an integer
+
+    // Get the container where the results will be displayed
     const resultContainer = document.getElementById('result-container');
-    
+
     // Clear any previous results
     resultContainer.innerHTML = '';
 
-    // Check if inputs are valid
+    // Check if the inputs are valid numbers
     if (isNaN(number) || isNaN(splits) || splits <= 0) {
-        alert('Please enter valid numbers for both fields.');
-        return;
+        alert('Please enter valid numbers.');
+        return; // Stop the function if the inputs are invalid
     }
-    
-    // Calculate the value for each split
+
+    // Calculate how much each part will be
     const splitValue = number / splits;
-    
-    // Generate the divs based on the number of splits
+
+    // Define an array of colors
+    const colors = ['blue', 'pink', 'red'];
+
+    // Create a new div for each part and set its color and box styling
     for (let i = 0; i < splits; i++) {
-        const div = document.createElement('div');
-        div.classList.add('result-div');  // Add a class for styling
-        div.textContent = splitValue.toFixed(2);  // Display the split value with 2 decimal places
-        
-        // Set the style of the div
-        div.style.backgroundColor = getRandomColor();  // Set a random background color
-        div.style.width = `${splitValue * 10}px`;      // Set width based on the split value
-        
+        const div = document.createElement('div');   // Create a new div element
+        const color = colors[i % colors.length];     // Get the color for this split
+
+        // Set the text content to show the split value only
+        div.textContent = splitValue.toFixed(2);
+
+        // Apply the styles for the box
+        div.classList.add('result-box');             // Add a class for styling
+        div.style.backgroundColor = color;           // Set background color
+
         // Add the div to the result container
         resultContainer.appendChild(div);
     }
 }
 
-// Function to generate a random color
-function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
+
+
